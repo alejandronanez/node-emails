@@ -36,13 +36,21 @@ app.post('/send-email', function handlePost(req, res) {
     text: message
   };
 
-  sgMail.send(messageToSend).then(console.log).catch(console.error);
-
-  res
-  .status(200)
-  .json({
-    status: 'OK'
-  });
+  sgMail.send(messageToSend)
+    .then(function() {
+      res
+        .status(200)
+        .json({
+          status: 'OK'
+        });
+    })
+    .catch(function() {
+      res
+        .status(400)
+        .json({
+          status: 'ERROR'
+        });
+    });
 });
 
 // Start Express
