@@ -1,17 +1,25 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
 
 const app = express();
-const expressPort = process.env.PORT || 3000;
+const expressPort = process.env.PORT || 8000;
 
 // Sendgrid config
 sgMail.setApiKey(process.env.SENDGRID_API);
 
+// Configure CORS
+const corsOptions = {
+  origin: process.env.FRONTEND_HOST,
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
 // Express config
 app.use(bodyParser.json());
+app.use(cors(corsOptions));
 
 // Express routes
 app.get('/', function handleGet(req, res) {
