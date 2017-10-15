@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/alejandronanez/node-emails/issues"
   },
-  "homepage": "https://github.com/alejandronanez/node-emails#readme"
+  "homepage": "https://github.com/alejandronanez/node-emails#readme",
+  "dependencies": {
+    "@sendgrid/mail": "^6.1.4",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
 }
