@@ -4,7 +4,9 @@
   "description": "Send emails with node",
   "main": "src/index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,8 @@
     "@sendgrid/mail": "^6.1.4",
     "body-parser": "^1.18.2",
     "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
