@@ -1,1 +1,4 @@
-console.log('hola mundo');
+require('dotenv').config();
+
+console.log(process.env.SENDGRID_API);
+
